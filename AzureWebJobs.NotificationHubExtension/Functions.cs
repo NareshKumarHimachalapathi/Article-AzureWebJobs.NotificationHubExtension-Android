@@ -9,7 +9,7 @@ namespace AzureWebJobs.NotificationHubExtension
 	{
 		// This function will get triggered/executed when a new message is written 
 		// on an Azure Queue called queue.
-		public static void ProcessQueueMessage([QueueTrigger("queue")] string message, TextWriter log, [NotificationHub(TagExpression = "JobsSuccessful")] out Notification notification)
+		public static void ProcessQueueMessage([QueueTrigger("queue")] string message, TextWriter log, [NotificationHub] out Notification notification)
 		{
 			log.WriteLine(message);
 
